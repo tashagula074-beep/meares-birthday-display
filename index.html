@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <title>Meares Birthday Display</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="screen" id="screen">
+    <div class="water"></div><div class="electric"></div>
+    <div class="confetti" aria-hidden="true"></div>
+    <header><img src="assets/meares-logo.png" alt="Meares Plumbing Electrical" /></header>
+    <section class="content">
+      <h1>HAPPY BIRTHDAY!</h1>
+      <div id="names" class="names"></div>
+      <div id="date" class="date"></div>
+      <p>Wishing you a fantastic birthday!</p>
+      <small>FROM EVERYONE AT MEARES PLUMBING ELECTRICAL</small>
+    </section>
+    <section id="none" class="none" hidden>
+      <img src="assets/meares-logo.png" alt="Meares Plumbing Electrical" />
+      <h2>Have a great day!</h2>
+    </section>
+  </main>
+<script>
+const titleCase = s => s.toLowerCase().replace(/(^|[\s,'-])\p{L}/gu, m => m.toUpperCase());
+async function load(){
+  try {
+    const r = await fetch('birthday.json?ts=' + Date.now(), {cache:'no-store'});
+    const data = await r.json();
+    const list = Array.isArray(data.birthdays) ? data.birthdays : [];
+    if (!list.length) {
+      document.querySelector('.content').hidden = true;
+      document.querySelector('header').hidden = true;
+      document.getElementById('none').hidden = false;
+      return;
+    }
+    document.getElementById('names').innerHTML = list.map(x => `<div>${titleCase(x.name || '')}</div>`).join('');
+    document.getElementById('date').textContent = list[0].date || '';
+    if(list.length > 2) document.getElementById('names').classList.add('many');
+  } catch(e) {
+    document.getElementById('names').textContent = 'Birthday display updating…';
+  }
+}
+load();
+setInterval(load, 5 * 60 * 1000);
+</script>
+</body>
+</html>
