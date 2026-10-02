@@ -15,11 +15,22 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      
-      - name: Commit upcoming birthdays
+      - name: Update upcoming-birthdays.json
+        env:
+          BIRTHDAY_PAYLOAD: ${{ toJSON(github.event.client_payload) }}
+        run: |
+          printf '%s' "$BIRTHDAY_PAYLOAD" > upcoming-birthdays.json
+          cat upcoming-birthdays.json
+
+      - name: Commit upcoming-birthdays.json
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add upcoming-birthdays.json
-          git diff --cached --quiet || git commit -m "Update upcoming birthdays display"
-          git push
+
+          if git diff --cached --quiet; then
+            echo "No upcoming birthday changes to commit."
+          else
+            git commit -m "Update upcoming birthdays display"
+            git push
+          fi
