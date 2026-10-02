@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Meares Work Anniversary</title>
+  <link rel="stylesheet" href="anniversary.css">
+</head>
+<body>
+  <main id="app">
+    <section class="slide">
+      <div class="top">
+        <img src="./assets/meares-logo.png" alt="Meares Plumbing Electrical">
+      </div>
+      <div class="gold-line"></div>
+      <div class="content">
+        <div class="sparkles" aria-hidden="true">✦ &nbsp; ✧ &nbsp; ✦ &nbsp; ✧ &nbsp; ✦</div>
+        <div class="eyebrow">CELEBRATING</div>
+        <h1>HAPPY WORK<br>ANNIVERSARY!</h1>
+        <div class="employee-card">
+          <div id="name" class="name">MEARES TEAM MEMBER</div>
+        </div>
+        <div class="years-wrap">
+          <div id="years" class="years">1 YEAR</div>
+          <div class="service">OF SERVICE</div>
+        </div>
+        <p class="message">Thank you for being an important part of the Meares team!</p>
+      </div>
+      <footer>MEARES PLUMBING &amp; ELECTRICAL</footer>
+    </section>
+  </main>
+
+<script>
+let people = [];
+let current = 0;
+
+function display(person) {
+  const years = Number(person.years) || 0;
+  document.getElementById('name').textContent = String(person.name || '').trim();
+  document.getElementById('years').textContent = years + (years === 1 ? ' YEAR' : ' YEARS');
+}
+
+async function loadAnniversaries() {
+  try {
+    const res = await fetch('./anniversary.json?ts=' + Date.now(), { cache: 'no-store' });
+    const data = await res.json();
+    people = Array.isArray(data.anniversaries) ? data.anniversaries : [];
+
+    if (!people.length) {
+      document.getElementById('name').textContent = 'MEARES TEAM';
+      document.getElementById('years').textContent = 'THANK YOU';
+      document.querySelector('.service').textContent = 'FOR ALL YOU DO';
+      document.querySelector('.message').textContent = 'Celebrating the people who make Meares great.';
+      return;
+    }
+
+    display(people[0]);
+
+    // Separate slide for each anniversary when multiple employees share the day.
+    if (people.length > 1) {
+      setInterval(() => {
+        current = (current + 1) % people.length;
+        display(people[current]);
+      }, 12000);
+    }
+  } catch (e) {
+    document.getElementById('name').textContent = 'MEARES TEAM';
+    document.getElementById('years').textContent = 'WORK ANNIVERSARY';
+  }
+}
+
+loadAnniversaries();
+</script>
+</body>
+</html>
