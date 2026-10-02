@@ -1,3 +1,29 @@
 {
-  "birthdays": []
+  "birthdays": [
+    {
+      "date": "OCTOBER 2",
+      "name": "TAB SHERWOOD",
+      "sortDate": "2026-10-02"
+    },
+    {
+      "date": "OCTOBER 3",
+      "name": "JAY PAGAN",
+      "sortDate": "2026-10-03"
+    },
+    {
+      "date": "OCTOBER 8",
+      "name": "DAVID CONCEPCION",
+      "sortDate": "2026-10-08"
+    },
+    {
+      "date": "OCTOBER 8",
+      "name": "MIGUEL BARRIOS",
+      "sortDate": "2026-10-08"
+    },
+    {
+      "date": "OCTOBER 9",
+      "name": "ANDREW CINELLI",
+      "sortDate": "2026-10-09"
+    }
+  ]
 }
