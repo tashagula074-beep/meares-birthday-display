@@ -28,7 +28,7 @@
 const titleCase = s => s.toLowerCase().replace(/(^|[\s,'-])\p{L}/gu, m => m.toUpperCase());
 async function load(){
   try {
-    const r = await fetch('PASTE-YOUR-ONEDRIVE-DOWNLOAD-LINK-HERE', {cache:'no-store'});
+    const r = await fetch('birthday.json?ts=' + Date.now(), {cache:'no-store'});
     const data = await r.json();
     const list = Array.isArray(data.birthdays) ? data.birthdays : [];
     if (!list.length) {
