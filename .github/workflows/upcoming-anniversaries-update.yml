@@ -1,0 +1,36 @@
+name: Update Upcoming Anniversaries
+
+on:
+  repository_dispatch:
+    types: [upcoming-anniversaries-update]
+
+permissions:
+  contents: write
+
+jobs:
+  update-upcoming-anniversaries:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Update upcoming-anniversaries.json
+        env:
+          ANNIVERSARY_PAYLOAD: ${{ toJSON(github.event.client_payload) }}
+        run: |
+          printf '%s' "$ANNIVERSARY_PAYLOAD" > upcoming-anniversaries.json
+          cat upcoming-anniversaries.json
+
+      - name: Commit upcoming-anniversaries.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add upcoming-anniversaries.json
+
+          if git diff --cached --quiet; then
+            echo "No upcoming anniversary changes to commit."
+          else
+            git commit -m "Update upcoming anniversaries display"
+            git push
+          fi
