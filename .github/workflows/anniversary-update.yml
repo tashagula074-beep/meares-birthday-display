@@ -1,0 +1,36 @@
+name: Update Anniversary Display
+
+on:
+  repository_dispatch:
+    types: [anniversary-update]
+
+permissions:
+  contents: write
+
+jobs:
+  update-anniversary:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Update anniversary.json
+        env:
+          ANNIVERSARY_PAYLOAD: ${{ toJSON(github.event.client_payload) }}
+        run: |
+          printf '%s' "$ANNIVERSARY_PAYLOAD" > anniversary.json
+          cat anniversary.json
+
+      - name: Commit anniversary.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add anniversary.json
+
+          if git diff --cached --quiet; then
+            echo "No anniversary changes to commit."
+          else
+            git commit -m "Update anniversary display"
+            git push
+          fi
