@@ -34,9 +34,18 @@
 let people = [];
 let current = 0;
 
+function formatEmployeeName(name) {
+  const clean = String(name || '').trim();
+  const parts = clean.split(',');
+  if (parts.length === 2) {
+    return `${parts[1].trim()} ${parts[0].trim()}`.toUpperCase();
+  }
+  return clean.toUpperCase();
+}
+
 function display(person) {
   const years = Number(person.years) || 0;
-  document.getElementById('name').textContent = String(person.name || '').trim();
+  document.getElementById('name').textContent = formatEmployeeName(person.name);
   document.getElementById('years').textContent = years + (years === 1 ? ' YEAR' : ' YEARS');
 }
 
