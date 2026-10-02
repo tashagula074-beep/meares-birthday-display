@@ -1,0 +1,28 @@
+name: Update Upcoming Birthdays
+
+on:
+  repository_dispatch:
+    types: [upcoming-birthdays-update]
+
+permissions:
+  contents: write
+
+jobs:
+  update-upcoming-birthdays:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Copy updated upcoming birthdays file
+        run: |
+          cp "$HOME/work/$(basename "$GITHUB_REPOSITORY")/$(basename "$GITHUB_REPOSITORY")/upcoming-birthdays.json" upcoming-birthdays.json
+
+      - name: Commit upcoming birthdays
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add upcoming-birthdays.json
+          git diff --cached --quiet || git commit -m "Update upcoming birthdays display"
+          git push
