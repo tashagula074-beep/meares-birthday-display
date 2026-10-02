@@ -15,10 +15,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Copy updated upcoming birthdays file
-        run: |
-          cp "$HOME/work/$(basename "$GITHUB_REPOSITORY")/$(basename "$GITHUB_REPOSITORY")/upcoming-birthdays.json" upcoming-birthdays.json
-
+      
       - name: Commit upcoming birthdays
         run: |
           git config user.name "github-actions[bot]"
