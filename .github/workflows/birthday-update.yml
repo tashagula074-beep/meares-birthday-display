@@ -1,0 +1,36 @@
+name: Update Birthday Display
+
+on:
+  repository_dispatch:
+    types: [birthday-update]
+
+permissions:
+  contents: write
+
+jobs:
+  update-birthday:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Update birthday.json
+        env:
+          BIRTHDAY_PAYLOAD: ${{ toJSON(github.event.client_payload) }}
+        run: |
+          printf '%s' "$BIRTHDAY_PAYLOAD" > birthday.json
+          cat birthday.json
+
+      - name: Commit birthday.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add birthday.json
+
+          if git diff --cached --quiet; then
+            echo "No birthday changes to commit."
+          else
+            git commit -m "Update birthday display"
+            git push
+          fi
