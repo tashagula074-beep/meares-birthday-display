@@ -1,11 +1,6 @@
 {
   "birthdays": [
     {
-      "date": "OCTOBER 2",
-      "name": "TAB SHERWOOD",
-      "sortDate": "2026-10-02"
-    },
-    {
       "date": "OCTOBER 3",
       "name": "JAY PAGAN",
       "sortDate": "2026-10-03"
@@ -24,6 +19,11 @@
       "date": "OCTOBER 9",
       "name": "ANDREW CINELLI",
       "sortDate": "2026-10-09"
+    },
+    {
+      "date": "OCTOBER 15",
+      "name": "TYLER HILTON",
+      "sortDate": "2026-10-15"
     }
   ]
 }
