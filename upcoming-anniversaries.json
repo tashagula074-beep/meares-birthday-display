@@ -1,11 +1,6 @@
 {
   "anniversaries": [
     {
-      "name": "OYOLA BURGOS, EMMANUEL",
-      "sortDate": "2026-10-07",
-      "years": 5
-    },
-    {
       "name": "FONTES, RYAN",
       "sortDate": "2026-10-08",
       "years": 1
@@ -16,12 +11,17 @@
       "years": 3
     },
     {
-      "name": "CONCEPCION, DAVID",
+      "name": "RODRIGUEZ, JASMINE",
       "sortDate": "2026-10-13",
       "years": 1
     },
     {
       "name": "DAVIDSON, BLAKE",
+      "sortDate": "2026-10-13",
+      "years": 1
+    },
+    {
+      "name": "CONCEPCION, DAVID",
       "sortDate": "2026-10-13",
       "years": 1
     }
