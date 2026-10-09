@@ -1,21 +1,6 @@
 {
   "birthdays": [
     {
-      "date": "OCTOBER 3",
-      "name": "JAY PAGAN",
-      "sortDate": "2026-10-03"
-    },
-    {
-      "date": "OCTOBER 8",
-      "name": "DAVID CONCEPCION",
-      "sortDate": "2026-10-08"
-    },
-    {
-      "date": "OCTOBER 8",
-      "name": "MIGUEL BARRIOS",
-      "sortDate": "2026-10-08"
-    },
-    {
       "date": "OCTOBER 9",
       "name": "ANDREW CINELLI",
       "sortDate": "2026-10-09"
@@ -24,6 +9,21 @@
       "date": "OCTOBER 15",
       "name": "TYLER HILTON",
       "sortDate": "2026-10-15"
+    },
+    {
+      "date": "OCTOBER 16",
+      "name": "TOMMY BAKER",
+      "sortDate": "2026-10-16"
+    },
+    {
+      "date": "OCTOBER 18",
+      "name": "SHANE MADAK",
+      "sortDate": "2026-10-18"
+    },
+    {
+      "date": "OCTOBER 20",
+      "name": "WILLIAM BROWN",
+      "sortDate": "2026-10-20"
     }
   ]
 }
