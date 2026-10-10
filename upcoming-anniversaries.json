@@ -1,11 +1,6 @@
 {
   "anniversaries": [
     {
-      "name": "FONTES, RYAN",
-      "sortDate": "2026-10-08",
-      "years": 1
-    },
-    {
       "name": "LEON, SAMUEL",
       "sortDate": "2026-10-12",
       "years": 3
@@ -23,6 +18,11 @@
     {
       "name": "CONCEPCION, DAVID",
       "sortDate": "2026-10-13",
+      "years": 1
+    },
+    {
+      "name": "GUILLEN, ALAIN",
+      "sortDate": "2026-10-15",
       "years": 1
     }
   ]
