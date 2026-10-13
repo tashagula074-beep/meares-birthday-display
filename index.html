@@ -46,6 +46,9 @@ async function load(){
   }
 }
 load();
+  document.querySelector('.content').hidden = list.length === 0;
+document.querySelector('header').hidden = list.length === 0;
+document.getElementById('none').hidden = list.length > 0;
 setInterval(load, 5 * 60 * 1000);
 </script>
 </body>
