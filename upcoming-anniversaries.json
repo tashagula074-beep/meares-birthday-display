@@ -1,29 +1,29 @@
 {
   "anniversaries": [
     {
-      "name": "LEON, SAMUEL",
-      "sortDate": "2026-10-12",
-      "years": 3
-    },
-    {
-      "name": "RODRIGUEZ, JASMINE",
-      "sortDate": "2026-10-13",
-      "years": 1
-    },
-    {
-      "name": "DAVIDSON, BLAKE",
-      "sortDate": "2026-10-13",
-      "years": 1
-    },
-    {
-      "name": "CONCEPCION, DAVID",
-      "sortDate": "2026-10-13",
-      "years": 1
-    },
-    {
       "name": "GUILLEN, ALAIN",
       "sortDate": "2026-10-15",
       "years": 1
+    },
+    {
+      "name": "STILLWELL, MARK",
+      "sortDate": "2026-10-18",
+      "years": 3
+    },
+    {
+      "name": "LOVETT, KANARIUS",
+      "sortDate": "2026-11-04",
+      "years": 7
+    },
+    {
+      "name": "CONRAD, CHRIS",
+      "sortDate": "2026-11-05",
+      "years": 1
+    },
+    {
+      "name": "GALLEGOS, FIDENCIO",
+      "sortDate": "2026-11-07",
+      "years": 3
     }
   ]
 }
