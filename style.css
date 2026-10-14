@@ -17,3 +17,62 @@
 #none p {
   font-size: clamp(22px, 3vw, 40px);
 }
+/* Redesigned no-birthday screen */
+#none {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3vh;
+  padding: 6vh 5vw;
+  background: linear-gradient(135deg, #061b42, #0a45a5);
+  text-align: center;
+}
+
+#none::before,
+#none::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 9px;
+  background: #ffe20a;
+}
+
+#none::before {
+  top: 7%;
+}
+
+#none::after {
+  bottom: 7%;
+}
+
+#none img {
+  display: block;
+  width: auto;
+  max-width: 55vw;
+  max-height: 30vh;
+  object-fit: contain;
+}
+
+#none h2 {
+  color: #ffe20a;
+  font-size: clamp(42px, 5vw, 90px);
+  font-weight: 900;
+  margin: 0;
+}
+
+#none p {
+  color: #ffffff;
+  font-family: Georgia, serif;
+  font-size: clamp(24px, 2.5vw, 44px);
+  font-style: italic;
+  margin: 0;
+}
+
+#none[hidden] {
+  display: none !important;
+}
