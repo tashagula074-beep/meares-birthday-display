@@ -1,16 +1,6 @@
 {
   "birthdays": [
     {
-      "date": "OCTOBER 15",
-      "name": "TYLER HILTON",
-      "sortDate": "2026-10-15"
-    },
-    {
-      "date": "OCTOBER 16",
-      "name": "TOMMY BAKER",
-      "sortDate": "2026-10-16"
-    },
-    {
       "date": "OCTOBER 18",
       "name": "SHANE MADAK",
       "sortDate": "2026-10-18"
@@ -24,6 +14,16 @@
       "date": "OCTOBER 21",
       "name": "JIBRAIL SHABAZZ",
       "sortDate": "2026-10-21"
+    },
+    {
+      "date": "OCTOBER 25",
+      "name": "CHRIS TATELBAUM",
+      "sortDate": "2026-10-25"
+    },
+    {
+      "date": "OCTOBER 25",
+      "name": "MARIE STILLWELL",
+      "sortDate": "2026-10-25"
     }
   ]
 }
