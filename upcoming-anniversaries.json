@@ -1,16 +1,6 @@
 {
   "anniversaries": [
     {
-      "name": "GUILLEN, ALAIN",
-      "sortDate": "2026-10-15",
-      "years": 1
-    },
-    {
-      "name": "STILLWELL, MARK",
-      "sortDate": "2026-10-18",
-      "years": 3
-    },
-    {
       "name": "LOVETT, KANARIUS",
       "sortDate": "2026-11-04",
       "years": 7
@@ -24,6 +14,16 @@
       "name": "GALLEGOS, FIDENCIO",
       "sortDate": "2026-11-07",
       "years": 3
+    },
+    {
+      "name": "O'CONNOR, ALEXIS",
+      "sortDate": "2026-11-07",
+      "years": 4
+    },
+    {
+      "name": "MICHAUD, DANIEL",
+      "sortDate": "2026-11-11",
+      "years": 2
     }
   ]
 }
