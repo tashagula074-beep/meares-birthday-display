@@ -1,16 +1,6 @@
 {
   "birthdays": [
     {
-      "date": "OCTOBER 27",
-      "name": "RICHARD EPLEY",
-      "sortDate": "2026-10-27"
-    },
-    {
-      "date": "OCTOBER 27",
-      "name": "KYLE COTTRELL",
-      "sortDate": "2026-10-27"
-    },
-    {
       "date": "OCTOBER 29",
       "name": "ZACHERY BELL",
       "sortDate": "2026-10-29"
@@ -24,6 +14,16 @@
       "date": "NOVEMBER 7",
       "name": "TY JORDAN",
       "sortDate": "2026-11-07"
+    },
+    {
+      "date": "NOVEMBER 9",
+      "name": "GUS MORRIS JR",
+      "sortDate": "2026-11-09"
+    },
+    {
+      "date": "NOVEMBER 9",
+      "name": "ED METTS",
+      "sortDate": "2026-11-09"
     }
   ]
 }
